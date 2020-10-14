@@ -1,0 +1,7 @@
+FROM docker.io/ibmcom/websphere-liberty@sha256:238ef2f145d04850a3411bb1ea07f54844f33a250b5164f277f8dece5aed41c4
+COPY target/simple-stuff.war /config/dropins/
+COPY config/server.xml /config/
+COPY config/server.env /config/
+COPY Dockerfile /my-special-folder/
+ENV "OPENSHIFT_BUILD_NAME"="even-simpler-1" "OPENSHIFT_BUILD_NAMESPACE"="bradleydowling" "OPENSHIFT_BUILD_SOURCE"="https://github.com/hairshirt/day3-simple-stuff.git" "OPENSHIFT_BUILD_COMMIT"="8758c9e7282c4dc218a27fd37648888b5510d11d"
+LABEL "io.openshift.build.commit.author"="Bradley Dowling \u003cbrad.dowling@protonmail.com\u003e" "io.openshift.build.commit.date"="Wed Oct 14 15:16:56 2020 -0400" "io.openshift.build.commit.id"="8758c9e7282c4dc218a27fd37648888b5510d11d" "io.openshift.build.commit.message"="????" "io.openshift.build.commit.ref"="master" "io.openshift.build.name"="even-simpler-1" "io.openshift.build.namespace"="bradleydowling" "io.openshift.build.source-location"="https://github.com/hairshirt/day3-simple-stuff.git"
